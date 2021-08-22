@@ -198,8 +198,9 @@
                 </v-btn>
             </div>
         </div>
-        <!--details-->
+        <!--details 详情信息-->
         <div class="details">
+            <!--标题头-->
             <div class="sui-navbar">
                 <div class="navbar-inner filter">
                     <ul class="sui-nav">
@@ -237,12 +238,12 @@
                     <li class="yui3-u-1-5" v-for="goods in goodsList">
                         <div class="list-wrap">
                             <div class="p-img">
-                                <a :href=" 'item/' + goods.id +'.html'" target="_blank"><img :src="goods.selected.image" height="200"/></a>
+                                <a :href=" 'item/' + goods.id +'.html'" target="_blank"><img :src="goods.selected.images" height="200"/></a>
                                 <!--多sku图片列表-->
                                 <ul class="skus">
                                     <li :class="{selected: sku.id == goods.selected.id}" v-for="sku in goods.skus" :key="sku.id"
                                         @mouseEnter="goods.selected=sku">
-                                        <img v-lazy="sku.image">
+                                        <img v-lazy="sku.images">
                                     </li>
                                 </ul>
                             </div>
@@ -272,6 +273,7 @@
 
                 </ul>
             </div>
+            <!--分页部分-->
             <div class="fr">
                 <div class="sui-pagination pagination-large">
                     <ul>
@@ -297,7 +299,7 @@
                 </div>
             </div>
         </div>
-        <!--hotsale-->
+        <!--hotsale 热卖商品-->
         <div class="clearfix hot-sale">
             <h4 class="title">热卖商品</h4>
             <div class="hot-list">
